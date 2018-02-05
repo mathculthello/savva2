@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Controller@index');
+Route::get('/google', 'Google@list');
+Route::get('/add/{url?}', 'Controller@add')->where('url','.*')->name('add');
