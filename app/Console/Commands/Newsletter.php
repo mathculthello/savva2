@@ -40,6 +40,7 @@ class Newsletter extends Command
     public function handle()
     {
         Mail::to('yegor.kuzmichev@gmail.com')
+        ->cc(['hibiny@mail.ru', 'volgarevmaxim@gmail.com', 'prohorovich@mail.ru'])
         ->send(new NewsletterMail);
     }
 }
