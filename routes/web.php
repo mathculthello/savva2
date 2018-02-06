@@ -11,6 +11,7 @@
 |
 */
 
+Route::redirect('/','/by_category', 301);
 Route::get('/by_category', 'Controller@by_category');
 Route::get('/full_list', 'Controller@full_list');
 Route::get('/google', 'Google@list');
