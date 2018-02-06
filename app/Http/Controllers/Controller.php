@@ -15,17 +15,19 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index()
+    public function by_category()
     {
-
       $sections = Url::SECTIONS;
-
       foreach($sections as $key=>$section){
         $urls_array[$key]=Url::where('section',$key)->get();
       }
+      return view('by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
+    }
 
-      return view('index',['sections'=>$sections, 'urls_array'=>$urls_array]);
-
+    public function full_list()
+    {
+      $urls = Url::orderBy('created_at','desc')->get();
+      return view('full_list',['urls'=>$urls]);
     }
 
     public function add($url)

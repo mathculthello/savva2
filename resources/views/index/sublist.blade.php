@@ -7,6 +7,9 @@
     <td>
       <a href="{{$url->url}}">{{ substr($url->url,0,90) }}</a>
     </td>
+    <td>
+      {{$url->created_at}}
+    </td>
   </tr>
   @endforeach
 </table>
