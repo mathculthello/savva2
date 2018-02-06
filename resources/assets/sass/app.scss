@@ -1,15 +1,14 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 
-table td
-{
-  background-color: #ccc;
-}
+// Все эти ваши стили не нужны
+tr {background:#ddd;}
+.num {font-size:.5em;}
