@@ -16,4 +16,13 @@
   <?php endforeach ?>
 </ol>
 
+
+Если есть идеи, reply-to-all.
+
+<br/>
+
+<p style="font-size:.8em; color:gray;">
+Чтобы отписаться от рассылки, просто ответь: "Меня все задолбало!!!"
+</p>
+
 @endsection
