@@ -5,8 +5,7 @@ namespace Savva;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use Curl\Curl;
-use Sunra\PhpSimple\HtmlDomParser as Parser;
+
 use Exception;
 
 class Url extends Model
@@ -19,35 +18,28 @@ class Url extends Model
 
     protected $primaryKey='rowid';
 
+    public $sections = [
+        1 => "Плейлисты",
+        2 => "Отдельные видео",
+        3 => "Профили",
+        4 => "Онлайн-курсы на спецплатформах",
+        5 => "Журналистика",
+        //6 => "Соцсети",
+        7 => "Анонсы",
+        8 => "Битые ссылки (к удалению)",
+        //9 => "Мероприятия",
+        10 => "Документы",
+        0 => "Прочее",
+    ];
+
     public function __construct($url=null)
     {
       if($url)
       {
         $this->url=$url;
-        $this->title=self::getTitle($url);
+        $this->title=Helper::getTitle($url);
       }
     }
 
-    public static function getTitle($url)
-    {
-        $curl = new Curl();
-        $curl->setOpt(CURLOPT_FOLLOWLOCATION, true);
-        $response=$curl->get($url);
-        $code = $response->http_status_code;
-        if ($code==200) {
-            return self::parseTitleFromHtml($response->response);
-        }
-    }
 
-    public static function parseTitleFromHtml($html)
-    {
-      if($dom = Parser::str_get_html($html))
-      {
-        if($a=$dom->find('title',0))
-        {
-          return $a->plaintext;
-        }
-      }
-      return false;
-    }
 }
