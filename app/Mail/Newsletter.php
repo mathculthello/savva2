@@ -7,6 +7,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use Savva\Google;
+
 class Newsletter extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,9 +18,12 @@ class Newsletter extends Mailable
      *
      * @return void
      */
+
+    public $google;
+
     public function __construct()
     {
-        //
+        $this->google=Google::get();
     }
 
     /**
@@ -28,6 +33,6 @@ class Newsletter extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mail.google');
     }
 }

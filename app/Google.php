@@ -3,10 +3,16 @@
 namespace Savva;
 
 use Curl\Curl;
+use Savva\Url;
 
 class Google
 {
-  public static function get()
+
+public static function get(){
+    return self::filter(self::_get());
+}
+
+  private static function _get()
   {
 
     /* PREPARE CONTENT */
@@ -19,6 +25,7 @@ class Google
         "cx" => env('GOOGLE_CX'),
         "dateRestrict" => "d7",
         "q" => $q,
+        "start" => 10,
       ];
 
     $url = "https://www.googleapis.com/customsearch/v1?";
@@ -28,5 +35,15 @@ class Google
     $result = $curl->get($url);
     return $result = json_decode($result->response);
 
+  }
+
+  private static function filter($result){
+    foreach($result->items as $key=>$value){
+      if(Url::where('url',$value->link)->exists()){
+        unset ($result->items[$key]);
+      };
+    }
+
+    return $result;
   }
 }

@@ -14,6 +14,10 @@
 Route::redirect('/','/by_category');
 
 
+/* Mails */
+Route::get('/mail','\Savva\Mail\Newsletter@build');
+
+
 /* Выборки */
 Route::get('/by_category', 'Controller@by_category');
 Route::get('/by_service', 'Controller@by_service');
