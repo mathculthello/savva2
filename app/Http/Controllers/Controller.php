@@ -15,6 +15,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function match()
+    {
+      return 'matched';
+    }
+
     public function by_category()
     {
       $sections = Url::SECTIONS;
