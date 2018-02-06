@@ -29,6 +29,16 @@ class Controller extends BaseController
       return view('by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
     }
 
+    public function by_service()
+    {
+      $services = [
+        "Плейлисты" => Url::where('url','LIKE','%playlist%')->get(),
+        "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->get(),
+        "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
+      ];
+      return view('by_service', ['services'=>$services]);
+    }
+
     public function full_list()
     {
       $urls = Url::orderBy('created_at','desc')->get();
