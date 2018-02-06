@@ -16,6 +16,7 @@ class AddTimestamps extends Migration
         Schema::create('urls', function (Blueprint $table) {
           $table->string('url')->unique();
           $table->string('title')->nullable();
+          $table->integer('section')->nullable();
           $table->softDeletes();
           $table->timestamps();
 
