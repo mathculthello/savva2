@@ -18,7 +18,7 @@ class Url extends Model
 
     protected $primaryKey='rowid';
 
-    public $sections = [
+    const SECTIONS = [
         1 => "Плейлисты",
         2 => "Отдельные видео",
         3 => "Профили",

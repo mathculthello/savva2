@@ -17,8 +17,15 @@ class Controller extends BaseController
 
     public function index()
     {
-      $urls = Url::all();
-      return view('index',['urls'=>$urls]);
+
+      $sections = Url::SECTIONS;
+
+      foreach($sections as $key=>$section){
+        $urls_array[$key]=Url::where('section',$key)->get();
+      }
+
+      return view('index',['sections'=>$sections, 'urls_array'=>$urls_array]);
+
     }
 
     public function add($url)
