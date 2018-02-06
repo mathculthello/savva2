@@ -13,6 +13,8 @@ class Url extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'urls';
+
     protected $dates = ['deleted_at'];
 
     protected $primaryKey='rowid';
