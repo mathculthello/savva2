@@ -14,7 +14,7 @@ class DefaultForUrlsSection extends Migration
     public function up()
     {
       Schema::table('urls', function (Blueprint $table) {
-        $table->string('url')->default(0)->change();
+        $table->string('section')->default(0)->change();
       });
     }
 
@@ -26,7 +26,7 @@ class DefaultForUrlsSection extends Migration
     public function down()
     {
       Schema::table('urls', function (Blueprint $table) {
-        $table->string('url')->default(NULL)->change();
+        $table->string('section')->default(NULL)->change();
       });
     }
 }
