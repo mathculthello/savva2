@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+Это автоматическая рассылка с сайта {{env('APP_URL')}}!
+
 <ol>
   <?php foreach($google->items as $item): ?>
     <li>
@@ -9,6 +11,5 @@
     </li>
   <?php endforeach ?>
 </ol>
-
 
 @endsection
