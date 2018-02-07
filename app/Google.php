@@ -25,7 +25,7 @@ public static function get(){
         "cx" => env('GOOGLE_CX'),
         "dateRestrict" => "d7",
         "q" => $q,
-        "start" => 0,
+        "start" => 1,
       ];
 
     $url = "https://www.googleapis.com/customsearch/v1?";
@@ -33,8 +33,8 @@ public static function get(){
     $curl = new Curl();
     $curl->setOpt(CURLOPT_RETURNTRANSFER, true);
     $result = $curl->get($url);
-    return $result = json_decode($result->response);
-
+    $result = json_decode($result->response);
+    return $result;
   }
 
   private static function filter($result){
