@@ -12,6 +12,10 @@ namespace Savva\Console\Commands;
 
 use Illuminate\Console\Command;
 
+use Savva\Google;
+use Savva\Url;
+use Exception;
+
 class GooglePopulate extends Command
 {
     /**
@@ -19,7 +23,7 @@ class GooglePopulate extends Command
      *
      * @var string
      */
-    protected $signature = 'savva:command:name';
+    protected $signature = 'savva:google:populate';
 
     /**
      * The console command description.
@@ -45,6 +49,17 @@ class GooglePopulate extends Command
      */
     public function handle()
     {
-        //
+        $obj=Google::all();
+        foreach($obj->items as $item)
+        {
+          try {
+
+          $db=new Url($item->link);
+          $db->save();
+
+        } catch (Exception $e) {
+
+        }
+        }
     }
 }
