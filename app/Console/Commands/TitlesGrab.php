@@ -16,7 +16,7 @@ class TitlesGrab extends Command
      *
      * @var string
      */
-    protected $signature = 'urls:update';
+    protected $signature = 'savva:urls:update';
 
     /**
      * The console command description.

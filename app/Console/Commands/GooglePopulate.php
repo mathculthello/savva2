@@ -1,26 +1,32 @@
 <?php
 
+/* Этот файл используется для популяции
+результатов из гугла в базу данных.
+
+Сюда попадают все результаты по запросу
+Алексей+Савватеев за неделю.
+*/
+
+
 namespace Savva\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail;
-use Savva\Mail\Newsletter as NewsletterMail;
 
-class Newsletter extends Command
+class GooglePopulate extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'savva:mail:newsletter';
+    protected $signature = 'savva:command:name';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Send newsletter';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -39,8 +45,6 @@ class Newsletter extends Command
      */
     public function handle()
     {
-        Mail::to('yegor.kuzmichev@gmail.com')
-        ->cc(['hibiny@mail.ru', 'volgarevmaxim@gmail.com', 'prohorovich@mail.ru'])
-        ->send(new NewsletterMail);
+        //
     }
 }
