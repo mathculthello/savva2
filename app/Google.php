@@ -33,7 +33,6 @@ public static function get(){
     $curl = new Curl();
     $curl->setOpt(CURLOPT_RETURNTRANSFER, true);
     $result = $curl->get($url);
-    dd($result);
     return $result = json_decode($result->response);
 
   }
