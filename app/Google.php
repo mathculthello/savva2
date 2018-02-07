@@ -125,7 +125,7 @@ return $this;
 public function load_response()
   {
     //$data = file_get_contents(self::DUMP);
-    $data = get_response($this->url,$this->queryset);
+    $data = self::get_response($this->url,$this->queryset);
     $result = json_decode($data);
 
     $this->items = array_merge($this->items,$result->items);
