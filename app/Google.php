@@ -64,6 +64,10 @@ class Google
 
 
 
+  public $total;
+
+
+
   public function make_collection()
   {
 
