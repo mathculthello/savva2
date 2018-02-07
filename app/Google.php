@@ -25,7 +25,7 @@ public static function get(){
         "cx" => env('GOOGLE_CX'),
         "dateRestrict" => "d7",
         "q" => $q,
-        "start" => 20,
+        "start" => 0,
       ];
 
     $url = "https://www.googleapis.com/customsearch/v1?";
