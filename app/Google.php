@@ -129,8 +129,9 @@ public function load_response()
     $result = json_decode($data);
 
     $this->items = array_merge($this->items,$result->items);
+    if(!$this->total){
     $this->total = $result->queries->nextPage[0]->totalResults;
-
+    }
 
     return $this;
 
