@@ -7,7 +7,7 @@ rsync $SERVER:$DOCROOT/database/database.sqlite database/database.sqlite
 
 }
 case $1 in
-get_database)
+getdb)
 get_database
 esac
 

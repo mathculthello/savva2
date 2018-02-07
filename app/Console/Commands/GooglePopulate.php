@@ -49,7 +49,7 @@ class GooglePopulate extends Command
      */
     public function handle()
     {
-        $obj=Google::all();
+        $obj=Google::get();
         foreach($obj->items as $item)
         {
           try {
@@ -58,8 +58,9 @@ class GooglePopulate extends Command
           $db->save();
 
         } catch (Exception $e) {
-
+          echo $e->getMessage();
         }
+
         }
     }
 }

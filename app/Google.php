@@ -1,12 +1,9 @@
 <?php
 
 /*
-| It is a model for working with
-| Google Custom Search
-| Все очень просто:
-| На входе задаем параметры поиска в переменную
-| $queryset, на выходе метод _get возвращает
-| массив результатов, соответствующий запросу
+Задача этого класса — получить первые N результатов
+гугла по данному запросу.
+
 */
 
 
@@ -42,11 +39,6 @@ class Google
   */
 
   public $query = "Алексей+Савватеев";
-
-
-
-
-  public $current_response;
 
 
 
@@ -97,9 +89,10 @@ class Google
 
 
 /* Facade */
-static function all() {
+
+static function get() {
   $obj = new self;
-  $obj->load_all_items();
+  $obj->load();
   return $obj;
 }
 
@@ -110,35 +103,15 @@ static function all() {
   */
 
 
-
-function load_all_items()
-{
-
-$this->load_response();
-
-for ($i=self::STEP+1; $i<$this->total; $i+=self::STEP ) {
-  $this->queryset['start']=$i;
-  $this->load_response();
-}
-
-return $this;
-
-}
-
-
-public function load_response()
+private function load()
   {
-    //$data = file_get_contents(self::DUMP);
-    $data = self::get_response($this->url,$this->queryset);
+    $data = self::get_json($this->url,$this->queryset);
     $result = json_decode($data);
 
-    if(isset($result->items)){
-    $this->items = array_merge($this->items,$result->items);
-    }
+    var_dump($result);
 
-    if(!$this->total){
     $this->total = $result->queries->nextPage[0]->totalResults;
-    }
+    $this->items = array_merge($this->items,$result->items);
 
     return $this;
 
@@ -156,16 +129,8 @@ public function load_response()
   public function dump_response()
   {
     file_put_contents(self::DUMP,
-      self::get_response($this->url,$this->$queryset));
+      self::get_json($this->url,$this->$queryset));
   }
-
-
-
-
-
-
-
-
 
 
 
@@ -177,7 +142,7 @@ public function load_response()
   Функция возвращает JSON-документ с Гугла
   */
 
-  public static function get_response($url,$queryset)
+  public static function get_json($url,$queryset)
   {
     $url .= http_build_query($queryset);
     $curl = new Curl();
