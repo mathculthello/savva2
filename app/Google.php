@@ -132,7 +132,10 @@ public function load_response()
     $data = self::get_response($this->url,$this->queryset);
     $result = json_decode($data);
 
+    if($result->items){
     $this->items = array_merge($this->items,$result->items);
+    }
+
     if(!$this->total){
     $this->total = $result->queries->nextPage[0]->totalResults;
     }
