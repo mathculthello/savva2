@@ -14,6 +14,7 @@ class AddUrlsTable extends Migration
     public function up()
     {
         Schema::create('urls', function (Blueprint $table) {
+          $table->increments('id');
           $table->string('url')->unique();
           $table->string('title')->nullable();
           $table->integer('section')->nullable();
