@@ -15,7 +15,7 @@ Route::redirect('/','/by_category');
 
 
 /* Mails */
-Route::get('/mail','\Savva\Mail\Newsletter@build');
+// Route::get('/mail','\Savva\Mail\Newsletter@build');
 
 
 /* Выборки */
@@ -24,8 +24,13 @@ Route::get('/by_service', 'Controller@by_service');
 Route::get('/full_list', 'Controller@full_list');
 
 
-/* Листинг из гугла */
-Route::get('/google', 'Google@list');
-
 /* Добавление новой записи */
-Route::get('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
+Route::post('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -8,7 +8,7 @@
 
 
 
-namespace Savva;
+namespace Savva\Console;
 
 use Curl\Curl;
 
@@ -60,12 +60,6 @@ class Google
 
 
 
-  public function make_collection()
-  {
-
-  }
-
-
 
   public function __construct()
   {
@@ -115,21 +109,6 @@ private function load()
 
     return $this;
 
-  }
-
-
-
-
-
-
-
-/* Функции. которые просто выполняют
-какую-то работу
-*/
-  public function dump_response()
-  {
-    file_put_contents(self::DUMP,
-      self::get_json($this->url,$this->$queryset));
   }
 
 
