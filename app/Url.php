@@ -16,8 +16,6 @@ class Url extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey='rowid';
-
     const SECTIONS = [
         1 => "Плейлисты",
         2 => "Отдельные видео",

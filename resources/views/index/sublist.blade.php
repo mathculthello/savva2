@@ -2,6 +2,9 @@
   @foreach ($urls as $url)
   <tr>
     <td>
+      {{$url->id}}
+    </td>
+    <td>
       {{$url->title}}
     </td>
     <td>
