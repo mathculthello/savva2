@@ -24,7 +24,7 @@ class Newsletter extends Mailable
 
     public function __construct()
     {
-        $this->items=Url::get()->where('updated_at','>',Carbon::now()->subWeek());
+        $this->items=Url::where('updated_at','>',Carbon::now()->subWeek())->orderBy('updated_at','desc')->get();
     }
 
     /**
