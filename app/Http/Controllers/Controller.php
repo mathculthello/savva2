@@ -93,9 +93,15 @@ class Controller extends BaseController
       $model->save();
     }
 
-    public function delete($id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \Savva\Url  $abc
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Url $url)
     {
-      Url::destroy($id);
+      $url->delete();
     }
 
 

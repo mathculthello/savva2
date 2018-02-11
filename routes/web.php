@@ -26,11 +26,9 @@ Route::get('/full_list', 'Controller@full_list');
 
 /* Добавление новой записи */
 Route::get('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
+Route::get('/delete/{url}', 'Controller@delete');
+
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

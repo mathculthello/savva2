@@ -32,6 +32,7 @@ class Url extends Model
 
     public function __construct($url=null)
     {
+      parent::__construct();
       if($url)
       {
         $this->url=$url;
