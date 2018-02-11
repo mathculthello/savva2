@@ -10,6 +10,12 @@
 
   <link rel="stylesheet" href="/css/app.css" />
   <script src="/js/app.js"></script>
+<style>
+  tr {background:#ddd;}
+  .num {font-size:.5em;}
+</style>
+
+
 </head>
 
 <body>

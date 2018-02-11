@@ -15,7 +15,7 @@ Route::redirect('/','/full_list');
 
 
 /* Mails */
-// Route::get('/mail','\Savva\Mail\Newsletter@build');
+Route::get('/newsletter','\Savva\Mail\Newsletter@build');
 
 
 /* Выборки */

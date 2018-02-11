@@ -13,7 +13,7 @@ class Newsletter extends Command
      *
      * @var string
      */
-    protected $signature = 'savva:mail:newsletter';
+    protected $signature = 'savva:mail:newsletter {--test : Do not send CC}';
 
     /**
      * The console command description.
@@ -39,8 +39,12 @@ class Newsletter extends Command
      */
     public function handle()
     {
+      $cc=[];
+      if (!$this->option('test')) {
+        $cc = ['hibiny@mail.ru', 'volgarevmaxim@gmail.com', 'prohorovich@mail.ru'];
+      };
         Mail::to('yegor.kuzmichev@gmail.com')
-        ->cc(['hibiny@mail.ru', 'volgarevmaxim@gmail.com', 'prohorovich@mail.ru'])
+        ->cc($cc)
         ->send(new NewsletterMail);
     }
 }

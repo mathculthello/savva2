@@ -7,7 +7,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-use Savva\Google;
+use Savva\Url;
+use Carbon\Carbon;
 
 class Newsletter extends Mailable
 {
@@ -19,11 +20,11 @@ class Newsletter extends Mailable
      * @return void
      */
 
-    public $google;
+    public $items;
 
     public function __construct()
     {
-        $this->google=Google::get();
+        $this->items=Url::get()->where('updated_at','>',Carbon::now()->subWeek());
     }
 
     /**
@@ -33,6 +34,6 @@ class Newsletter extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.google');
+        return $this->view('mail.newsletter');
     }
 }
