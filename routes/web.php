@@ -25,7 +25,7 @@ Route::get('/full_list', 'Controller@full_list');
 
 
 /* Добавление новой записи */
-Route::post('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
+Route::get('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
 
 Auth::routes();
 
