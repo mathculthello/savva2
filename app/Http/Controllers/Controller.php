@@ -30,7 +30,7 @@ class Controller extends BaseController
 
     function __construct()
     {
-      $this->middleware('auth.basic',['only'=>'add']);
+      $this->middleware('auth.basic',['only'=>['add','delete']]);
     }
 
 
@@ -92,4 +92,11 @@ class Controller extends BaseController
       $model->user_id=Auth::id();
       $model->save();
     }
+
+    public function delete($id)
+    {
+      Url::destroy($id);
+    }
+
+
 }
