@@ -102,7 +102,7 @@ private function load()
     $data = self::get_json($this->url,$this->queryset);
     $result = json_decode($data);
 
-    var_dump($result);
+    //var_dump($result);
 
     $this->total = $result->queries->nextPage[0]->totalResults;
     $this->items = array_merge($this->items,$result->items);

@@ -12,7 +12,7 @@ namespace Savva\Console\Commands;
 
 use Illuminate\Console\Command;
 
-use Savva\Google;
+use Savva\Console\Google;
 use Savva\Url;
 use Exception;
 
@@ -52,11 +52,20 @@ class GooglePopulate extends Command
         $obj=Google::get();
         foreach($obj->items as $item)
         {
+
+          echo "\n\n===================\n";
+
+          $url=new Url($item->link);
+          $url->status="google";
+          $url->user_id=0;
+
+          echo $url->url;
+          echo "\n";
+          echo $url->title;
+
           try {
 
-          $db=new Url($item->link);
-          $db->save();
-
+            $url->save();
         } catch (Exception $e) {
           echo $e->getMessage();
         }

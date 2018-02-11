@@ -10,6 +10,9 @@
     <td>
       {{$url->created_at}}
     </td>
+    <td>
+      {{$url->status}}
+    </td>
   </tr>
   @endforeach
 </table>
