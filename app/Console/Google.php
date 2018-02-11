@@ -15,53 +15,66 @@ use Curl\Curl;
 class Google
 {
 
+  /* Настройки */
+
 
   /*
-  URL АПИ гугла
-  */
+   * URL АПИ гугла
+   *
+   * @var string
+   */
 
   protected $url = "https://www.googleapis.com/customsearch/v1?";
-
-
-
-
-
-
-  const DUMP = __DIR__.'/../storage/app/google_response.json';
-
 
 
   const STEP=10;
 
 
-  /*
-  Это, собственно, сам запрос
-  */
-
-  public $query = "Алексей+Савватеев";
-
-
-
-
-  public $items = [];
-
-
 
   /*
-  | Здесь содержатся параметры запроса
-  | к АПИ
-  */
-
+   * Здесь содержатся параметры запроса к АПИ
+   *
+   * @var array
+   */
   public $queryset = [];
 
 
 
+/* Результаты запроса */
+
+  /*
+   * Содержит промежуточный результат запроса
+   *
+   * @var \stdClass
+   */
+   private $intermediate_result;
+
+  /*
+   * Всего результатов в ответе
+   * Загружается в конструкторе
+   *
+   * @var int
+   */
   public $total;
 
 
 
+  /*
+   * Массив поисковых результатов
+   *
+   * @var array
+   */
+  public $items = [];
 
-  public function __construct()
+
+
+/*
+ * @param string $query
+ * @return $this
+ */
+
+
+  public function __construct($query="Алексей Савватеев")
   {
 
     /*
@@ -73,22 +86,55 @@ class Google
       "key" => env('GOOGLE_KEY'),
       "cx" => env('GOOGLE_CX'),
       "dateRestrict" => "d7",
-      "q" => $this->query,
+      "q" => $query,
       "start" => 1,
     ];
 
+    /* Загружаем первый результат в $this->intermediate_result */
+
+    $this->load();
+
+    $this->total = $this->intermediate_result->queries->nextPage[0]->totalResults;
+    $this->items = $this->intermediate_result->items;
+
+
+    return $this;
+
+  }
+
+
+  public function get_n_pages ($n) {
+    $total = $this->total;
+    $total_pages = $total/self::STEP;
+    $n = $n>$total_pages ? $total_pages : $n;
+    for ($i=1; $i<$n; $i++) {
+      $this->queryset['start']=$i*self::STEP;
+      $this->load();
+      $this->items = array_merge($this->items,$this->intermediate_result->items);
+    }
+
+    return $this;
 
 
   }
 
 
-/* Facade */
+/* Facades */
 
-static function get() {
+
+/*
+ * @return $this
+ */
+
+public static function get($n=1) {
   $obj = new self;
-  $obj->load();
+  $obj->get_n_pages($n);
   return $obj;
 }
+
+
+
+
 
 
 
@@ -97,15 +143,18 @@ static function get() {
   */
 
 
+
+
+ /*
+  * @return $this
+  */
+
 private function load()
   {
-    $data = self::get_json($this->url,$this->queryset);
-    $result = json_decode($data);
+    $data = self::request($this->url,$this->queryset);
+    $this->intermediate_result = json_decode($data);
 
     //var_dump($result);
-
-    $this->total = $result->queries->nextPage[0]->totalResults;
-    $this->items = array_merge($this->items,$result->items);
 
     return $this;
 
@@ -115,13 +164,16 @@ private function load()
 
 
 
-/* Статические функции */
+  /* Статические функции */
 
   /*
-  Функция возвращает JSON-документ с Гугла
+  * Получение тела ответа на запрос к серверу
+  * @param $url string
+  * @param
+  * @return string
   */
 
-  public static function get_json($url,$queryset)
+  public static function request($url,$queryset)
   {
     $url .= http_build_query($queryset);
     $curl = new Curl();

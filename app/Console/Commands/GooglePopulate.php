@@ -23,7 +23,8 @@ class GooglePopulate extends Command
      *
      * @var string
      */
-    protected $signature = 'savva:google:populate';
+    protected $signature = 'savva:google:populate {--nosave : Ничего не записывать в базу.}
+    {--pages=1 : Pages count to get}';
 
     /**
      * The console command description.
@@ -49,7 +50,9 @@ class GooglePopulate extends Command
      */
     public function handle()
     {
-        $obj=Google::get();
+
+
+        $obj=Google::get($this->option('pages'));
         foreach($obj->items as $item)
         {
 
@@ -62,6 +65,10 @@ class GooglePopulate extends Command
           echo $url->url;
           echo "\n";
           echo $url->title;
+
+          if($this->option('nosave')){
+            continue;
+          }
 
           try {
 
