@@ -11,7 +11,7 @@
 |
 */
 
-Route::redirect('/','/by_category');
+Route::redirect('/','/full_list');
 
 
 /* Mails */
@@ -31,6 +31,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
