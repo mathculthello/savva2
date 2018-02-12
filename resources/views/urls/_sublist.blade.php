@@ -16,6 +16,15 @@
     <td>
       {{$url->status}}
     </td>
+    @auth
+    <td>
+      <form method="POST" action="{{ action('UrlController@destroy',$url->id) }}">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Удалить">
+      </form>
+    </td>
+    @endauth
   </tr>
   @endforeach
 </table>
