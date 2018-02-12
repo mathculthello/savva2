@@ -30,13 +30,13 @@ class Url extends Model
         0 => "Без категории",
     ];
 
-    public function __construct($url=null)
+    public function __construct(array $data=[])
     {
-      parent::__construct();
-      if($url)
+      parent::__construct($data);
+      if($data)
       {
-        $this->url=$url;
-        $this->title=Helper::getTitle($url);
+        //$this->url=$url;
+        //$this->title=Helper::getTitle($url);
       }
     }
 

@@ -11,22 +11,20 @@
 |
 */
 
-Route::redirect('/','/full_list');
-
 
 /* Mails */
 Route::get('/newsletter','\Savva\Mail\Newsletter@build');
 
 
 /* Выборки */
-Route::get('/by_category', 'Controller@by_category');
-Route::get('/by_service', 'Controller@by_service');
-Route::get('/full_list', 'Controller@full_list');
+Route::get('/', 'UrlController@index');
+//Route::get('/by_category', 'UrlController@by_category');
+//Route::get('/by_service', 'UrlController@by_service');
 
 
 /* Добавление новой записи */
-Route::get('/add/{url}', 'Controller@add')->where('url','.*')->name('add');
-Route::get('/delete/{url}', 'Controller@delete');
+Route::post('/new/', 'UrlController@add')->where('url','.*')->name('add');
+Route::delete('/{url}', 'UrlController@delete');
 
 
 Auth::routes();
