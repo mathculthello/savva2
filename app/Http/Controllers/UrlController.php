@@ -26,28 +26,24 @@ class UrlController extends Controller
     }
 
 
-    /*
+    public function by_category()
+    {
+      $sections = Url::SECTIONS;
+      foreach($sections as $key=>$section){
+        $urls_array[$key]=Url::where('section',$key)->get();
+      }
+      return view('urls.by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
+    }
 
-        public function by_category()
-        {
-          $sections = Url::SECTIONS;
-          foreach($sections as $key=>$section){
-            $urls_array[$key]=Url::where('section',$key)->get();
-          }
-          return view('by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
-        }
-
-        public function by_service()
-        {
-          $services = [
-            "Плейлисты" => Url::where('url','LIKE','%playlist%')->get(),
-            "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->get(),
-            "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
-          ];
-          return view('by_service', ['services'=>$services]);
-        }
-
-    */
+    public function by_service()
+    {
+      $services = [
+        "Плейлисты" => Url::where('url','LIKE','%playlist%')->get(),
+        "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->get(),
+        "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
+      ];
+      return view('urls.by_service', ['services'=>$services]);
+    }
 
 
     /**

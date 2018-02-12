@@ -9,7 +9,7 @@
 @php
 $urls = $urls_array[$key]
 @endphp
-@include ('index.sublist')
+@include ('urls._sublist')
 @endforeach
 
 @endsection

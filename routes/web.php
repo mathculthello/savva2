@@ -18,8 +18,8 @@ Route::get('/newsletter','\Savva\Mail\Newsletter@build');
 
 /* Выборки */
 Route::get('/', 'UrlController@index');
-//Route::get('/by_category', 'UrlController@by_category');
-//Route::get('/by_service', 'UrlController@by_service');
+Route::get('/by_category', 'UrlController@by_category');
+Route::get('/by_service', 'UrlController@by_service');
 
 
 /* Добавление новой записи */
