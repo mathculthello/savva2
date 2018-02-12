@@ -25,7 +25,7 @@ Route::get('/full_list', 'UrlController@index');
 
 /* Добавление новой записи */
 Route::post('/new/', 'UrlController@add')->where('url','.*')->name('add');
-Route::delete('/{url}', 'UrlController@delete');
+Route::delete('/{url}', 'UrlController@destroy');
 
 
 Auth::routes();

@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $user = new Savva\User();
         $user->name = 'egor';
         $user->email = 'egor@egor.cf';
-        $user->password = Hash::make('egor');
+        $user->password = Hash::make('leonardo');
         $user->save();
     }
 }
