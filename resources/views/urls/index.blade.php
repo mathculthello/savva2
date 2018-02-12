@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layouts.simple')
 
 @section('content')
 
 <h1>Ресурсы Алексея Савватеева</h1>
-@include ('index.filters')
+@include ('urls._filters')
 
 
 @endsection

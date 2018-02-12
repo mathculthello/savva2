@@ -22,7 +22,7 @@ class UrlController extends Controller
     public function index()
     {
       $urls = Url::orderBy('created_at','desc')->get();
-      return view('full_list',['urls'=>$urls]);
+      return view('urls.full_list',['urls'=>$urls]);
     }
 
 
