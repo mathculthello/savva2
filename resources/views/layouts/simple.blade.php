@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Laravel</title>
+  <title>{{ config('app.name', 'Laravel') }}</title>
 
   <script src="/js/app.js"></script>
 <style>
@@ -20,6 +20,8 @@
 <body>
   <div class="container">
     <div class="row">
+      <h1>{{ config('app.name') }}</h1>
+
       @yield('content')
     </div>
   </div>

@@ -20,6 +20,7 @@ Route::get('/newsletter','\Savva\Mail\Newsletter@build');
 Route::get('/', 'UrlController@index');
 Route::get('/by_category', 'UrlController@by_category');
 Route::get('/by_service', 'UrlController@by_service');
+Route::get('/full_list', 'UrlController@index');
 
 
 /* Добавление новой записи */
