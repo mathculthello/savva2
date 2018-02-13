@@ -1,8 +1,8 @@
-@extends('layout')
+@extends('urls.layout')
 
 @section('content')
 
-<h1>Пополнения в базе данных за неделю!</h1>
+<h2>Пополнения за неделю!</h2>
 <p>
 Это автоматическая рассылка с сайта {{env('APP_URL')}}.
 </p>
@@ -12,7 +12,7 @@
 
 <?php $urls=$items; ?>
 
-@include('index.sublist')
+@include('urls._sublist')
 
 <br/>
 
