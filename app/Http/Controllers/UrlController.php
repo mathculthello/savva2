@@ -27,16 +27,6 @@ class UrlController extends Controller
       return view('urls.index.full_list',['urls'=>$urls]);
     }
 
-
-    public function by_category()
-    {
-      $sections = Url::SECTIONS;
-      foreach($sections as $key=>$section){
-        $urls_array[$key]=Url::where('section',$key)->get();
-      }
-      return view('urls.index.by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
-    }
-
     public function by_service()
     {
       $services = [
