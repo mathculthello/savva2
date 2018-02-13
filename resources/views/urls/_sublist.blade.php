@@ -8,7 +8,7 @@
       {{$url->title}}
     </td>
     <td>
-      <a href="{{$url->url}}">{{ substr($url->url,0,90) }}</a>
+      <a href="{{$url->url}}">{{ substr($url->url,0,50) }}</a>
     </td>
     <td>
       {{$url->created_at}}
