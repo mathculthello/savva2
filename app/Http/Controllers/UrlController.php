@@ -98,7 +98,7 @@ class UrlController extends Controller
      */
     public function edit(Url $url)
     {
-        //
+        return view('urls.edit',['url'=>$url]);
     }
 
     /**
@@ -110,7 +110,11 @@ class UrlController extends Controller
      */
     public function update(Request $request, Url $url)
     {
-        //
+      $url->title=$request->title;
+      $url->url=$request->url;
+      $url->status=$request->status;
+      $url->save();
+      return redirect()->route('urls.index');
     }
 
     /**

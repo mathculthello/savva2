@@ -15,6 +15,7 @@
 /* Mails */
 Route::get('/newsletter','\Savva\Mail\Newsletter@build');
 
+Route::resource('urls','UrlController');
 
 /* Выборки */
 Route::get('/', 'UrlController@index');

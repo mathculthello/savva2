@@ -18,6 +18,9 @@
     </td>
     @auth
     <td>
+      <a href="{{ action('UrlController@edit',$url->id) }}">Edit</a>
+    </td>
+    <td>
       <form method="POST" action="{{ action('UrlController@destroy',$url->id) }}">
         @csrf
         @method('DELETE')
