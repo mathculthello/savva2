@@ -66,7 +66,7 @@ class UrlController extends Controller
      */
     public function create()
     {
-        //
+      return view('urls.create');
     }
 
     /**
@@ -77,7 +77,9 @@ class UrlController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $url = new Url(['url'=>$request->url]);
+        $url->save();
+        return redirect()->route('urls.index');
     }
 
     /**

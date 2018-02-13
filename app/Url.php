@@ -16,13 +16,15 @@ class Url extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function __construct(array $data=[])
+    protected $fillable = ['url','title'];
+
+    public function __construct($data=[])
     {
       parent::__construct($data);
-      if($data)
+      if(isset($data['url'])&&!isset($data['title']))
       {
-        //$this->url=$url;
-        //$this->title=Helper::getTitle($url);
+        $this->url=$data['url'];
+        $this->title=Helper::getTitle($this->url);
       }
     }
 

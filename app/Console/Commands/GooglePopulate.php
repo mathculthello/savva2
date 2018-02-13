@@ -58,9 +58,8 @@ class GooglePopulate extends Command
 
           echo "\n\n===================\n";
 
-          $url=new Url($item->link);
-          $url->status="google";
-          $url->user_id=0;
+          $url=new Url(['url'=>$item->link]);
+          $url->tag="google";
 
           echo $url->url;
           echo "\n";
