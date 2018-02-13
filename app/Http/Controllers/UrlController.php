@@ -115,7 +115,7 @@ class UrlController extends Controller
       $url->url=$request->url;
       $url->tag=$request->tag;
       $url->save();
-      return redirect()->route('urls.index');
+      return back();
     }
 
     /**
