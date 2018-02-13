@@ -9,7 +9,7 @@
 ## Системные требования
 
 * PHP 7
-* Composer
+* [Composer](http://getcomposer.org)
 * Sqlite3
 
 
