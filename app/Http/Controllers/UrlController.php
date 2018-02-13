@@ -4,6 +4,8 @@ namespace Savva\Http\Controllers;
 
 use Savva\Url;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class UrlController extends Controller
 {
@@ -43,6 +45,15 @@ class UrlController extends Controller
         "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
       ];
       return view('urls.index.by_service', ['services'=>$services]);
+    }
+
+    public function index_by_tag()
+    {
+      $tags = DB::table('urls')->groupBy('tag')->pluck('tag')->all();
+      foreach($tags as $tag){
+        $urls_array[$tag]=Url::where('tag',$tag)->get();
+      }
+      return view('urls.index.by_tag',['urls_array'=>$urls_array]);
     }
 
 
