@@ -1,4 +1,4 @@
-@extends('urls.index')
+@extends('urls.layout')
 
 @section('content')
 

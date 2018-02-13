@@ -22,7 +22,7 @@ class UrlController extends Controller
     public function index()
     {
       $urls = Url::orderBy('created_at','desc')->get();
-      return view('urls.full_list',['urls'=>$urls]);
+      return view('urls.index.full_list',['urls'=>$urls]);
     }
 
 
@@ -32,7 +32,7 @@ class UrlController extends Controller
       foreach($sections as $key=>$section){
         $urls_array[$key]=Url::where('section',$key)->get();
       }
-      return view('urls.by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
+      return view('urls.index.by_category',['sections'=>$sections, 'urls_array'=>$urls_array]);
     }
 
     public function by_service()
@@ -42,7 +42,7 @@ class UrlController extends Controller
         "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->get(),
         "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
       ];
-      return view('urls.by_service', ['services'=>$services]);
+      return view('urls.index.by_service', ['services'=>$services]);
     }
 
 
