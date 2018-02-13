@@ -4,7 +4,7 @@
 
 Вертится здесь: http://savva.egor.cf/
 
-Это версия на базе Laravel.
+Это версия на базе [Laravel](https://laravel.com).
 
 ## Системные требования
 
