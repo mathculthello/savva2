@@ -19,9 +19,10 @@ Route::resource('urls','UrlController');
 
 /* Выборки */
 Route::get('/', 'UrlController@index');
-Route::get('/by_category', 'UrlController@by_category');
-Route::get('/by_service', 'UrlController@by_service');
-Route::get('/full_list', 'UrlController@index');
+Route::get('/by_tag', 'UrlController@index_by_tag')->name('by_tag');
+Route::get('/by_cat', 'UrlController@by_category')->name('by_cat');
+Route::get('/by_site', 'UrlController@by_service')->name('by_site');
+Route::get('/full', 'UrlController@index')->name('full_list');
 
 
 /* Добавление новой записи */

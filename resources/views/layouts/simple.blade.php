@@ -12,6 +12,7 @@
 <style>
   tr {background:#ddd;}
   .num {font-size:.5em;}
+  a {padding:3px;}
 </style>
 
 

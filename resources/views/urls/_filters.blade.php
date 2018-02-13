@@ -1,3 +1,4 @@
-<a href="/by_category">По категориям</a>
-<a href="/full_list">Одним списком</a>
-<a href="/by_service">По сервисам</a>
+<a href="{{ route('by_tag') }}">По тегам</a>
+<a href="{{ route('by_cat') }}">По категориям</a>
+<a href="{{ route('by_site') }}">По сервисам</a>
+<a href="{{ route('full_list') }}">Одним списком</a>
