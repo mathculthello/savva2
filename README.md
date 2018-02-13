@@ -2,14 +2,21 @@
 
 База данных ссылок на выступления и ресурсы Алексея Савватеева.
 
-Написано на PHP 7 + Laravel 5.6.
+Вертится здесь: https://savva.egor.cf/
 
-Для установки:
 
+## Системные требования
+
+* PHP 7
+* Composer
+* Sqlite3
+
+
+## Для разработки:
+
+```bash
 git clone https://github.com/aeifn/savva2
-
 cd savva2
-
 make erect
-
 php artisan serve
+```
