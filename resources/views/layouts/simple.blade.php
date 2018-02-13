@@ -21,7 +21,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <h1>{{ config('app.name') }}</h1>
+      <h1><a href="/">{{ config('app.name') }}</a></h1>
 
       @yield('content')
     </div>
