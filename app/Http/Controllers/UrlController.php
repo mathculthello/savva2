@@ -39,7 +39,7 @@ class UrlController extends Controller
 
     public function index_by_tag()
     {
-      $tags = DB::table('urls')->groupBy('tag')->whereNotIn('tag',[''])->pluck('tag')->all();
+      $tags = DB::table('urls')->groupBy('tag')->pluck('tag')->all();
       foreach($tags as $tag){
         $urls_array[$tag]=Url::where('tag',$tag)->get();
       }
