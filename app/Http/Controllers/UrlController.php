@@ -112,7 +112,7 @@ class UrlController extends Controller
     {
       $url->title=$request->title;
       $url->url=$request->url;
-      $url->status=$request->status;
+      $url->tag=$request->tag;
       $url->save();
       return redirect()->route('urls.index');
     }

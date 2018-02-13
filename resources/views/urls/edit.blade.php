@@ -8,7 +8,7 @@
 @method('PUT')
 <input name="title" value="{{ $url->title }}">
 <input name="url" value="{{ $url->url }}">
-<input name="status" value="{{ $url->status }}">
+<input name="tag" value="{{ $url->tag }}">
 <input type="submit" value="Save">
 
 </form>

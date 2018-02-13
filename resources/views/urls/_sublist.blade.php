@@ -14,14 +14,14 @@
       {{$url->created_at}}
     </td>
     <td>
-      {{$url->status}}
+      {{$url->tag}}
     </td>
     @auth
     <td>
-      <a href="{{ action('UrlController@edit',$url->id) }}">Edit</a>
+      <a href="{{ route('urls.edit',$url->id) }}">Ред</a>
     </td>
     <td>
-      <form method="POST" action="{{ action('UrlController@destroy',$url->id) }}">
+      <form method="POST" action="{{ route('urls.destroy',$url->id) }}">
         @csrf
         @method('DELETE')
         <input type="submit" value="Удалить">
