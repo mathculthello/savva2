@@ -4,10 +4,9 @@
 
 @parent
 
-@foreach($sections as $key=>$section)
-<h2>{{$section}}</h2>
+@foreach($urls_array as $key=>$urls)
+<h2>{{$key}}</h2>
 @php
-$urls = $urls_array[$key]
 @endphp
 @include ('urls._sublist')
 @endforeach
