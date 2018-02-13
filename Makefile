@@ -1,7 +1,5 @@
-all: bootstrap
-
-bootstrap:
+erect:
 	composer install
-	cp .env.example .env
+	test -f .env || cp .env.example .env
 	touch database/database.sqlite
-	php artisan migrate
+	php artisan migrate:fresh --seed
