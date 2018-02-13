@@ -23,8 +23,11 @@ class UrlController extends Controller
      */
     public function index()
     {
-      $urls = Url::orderBy('created_at','desc')->get();
-      return view('urls.index.full_list',['urls'=>$urls]);
+      $tags = DB::table('urls')->groupBy('tag')->pluck('tag')->all();
+      foreach($tags as $tag){
+        $urls_array[$tag]=Url::where('tag',$tag)->get();
+      }
+      return view('urls.index.by_tag',['urls_array'=>$urls_array]);
     }
 
     public function by_service()
@@ -37,14 +40,6 @@ class UrlController extends Controller
       return view('urls.index.by_service', ['services'=>$services]);
     }
 
-    public function index_by_tag()
-    {
-      $tags = DB::table('urls')->groupBy('tag')->pluck('tag')->all();
-      foreach($tags as $tag){
-        $urls_array[$tag]=Url::where('tag',$tag)->get();
-      }
-      return view('urls.index.by_tag',['urls_array'=>$urls_array]);
-    }
 
 
     /**
