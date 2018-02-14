@@ -27,7 +27,7 @@
   alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
 </a>
 
-<iframe src="https://money.yandex.ru/quickpay/button-widget?targets=%D0%9D%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&default-sum=500&button-text=14&any-card-payment-type=on&button-size=s&button-color=orange&successURL=http%3A%2F%2Fsavva.egor.cf&quickpay=small&account=410014777389674&" width="200" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+<iframe src="https://money.yandex.ru/quickpay/button-widget?targets=%D0%9D%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&default-sum=1000&button-text=14&any-card-payment-type=on&button-size=s&button-color=orange&successURL=http%3A%2F%2Fsavva.egor.cf&quickpay=small&account=410014777389674&" width="200" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 
 
   <div class="container">
