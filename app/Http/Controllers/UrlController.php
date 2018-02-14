@@ -33,9 +33,9 @@ class UrlController extends Controller
     public function by_service()
     {
       $services = [
-        "Плейлисты" => Url::where('url','LIKE','%playlist%')->get(),
-        "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->get(),
-        "Вкшечка" => Url::where('url','LIKE','%vk.com%')->get(),
+        "Плейлисты" => Url::where('url','LIKE','%playlist%')->orderBy('tag')->get(),
+        "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->orderBy('tag')->get(),
+        "Вкшечка" => Url::where('url','LIKE','%vk.com%')->orderBy('tag')->get(),
       ];
       return view('urls.index.by_service', ['services'=>$services]);
     }
