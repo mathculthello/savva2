@@ -10,6 +10,7 @@
 
   <script src="/js/app.js"></script>
 <style>
+  body {padding:20px 10px;}
   tr {background:#ddd;}
   .num {font-size:.5em;}
   a {padding:3px;}
