@@ -23,6 +23,12 @@ Route::redirect('/by_tag', '/');
 Route::get('/by_site', 'UrlController@by_service')->name('by_site');
 Route::get('/full', 'UrlController@index')->name('full_list');
 
+/* Compatibility */
+
+Route::redirect('/full_list', '/');
+
+
+
 
 /* Добавление новой записи */
 Route::post('/new/', 'UrlController@add')->where('url','.*')->name('add');
