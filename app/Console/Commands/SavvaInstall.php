@@ -5,7 +5,7 @@ namespace Savva\Console\Commands;
 use Illuminate\Console\Command;
 use Encore\Admin\Console\InstallCommand as LaravelAdminInstallCommand;
 
-class SavvaInstall extends Command
+class SavvaInstall extends LaravelAdminInstallCommand
 {
     /**
      * The name and signature of the console command.
@@ -38,7 +38,6 @@ class SavvaInstall extends Command
      */
     public function handle()
     {
-        $laravel_admin_install = new LaravelAdminInstallCommand;
-        $laravel_admin_install->initDatabase();
+        $this->initDatabase();
     }
 }
