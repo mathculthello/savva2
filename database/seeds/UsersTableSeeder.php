@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new Savva\User();
+        $user = new App\User();
         $user->name = 'egor';
         $user->email = 'egor@egor.cf';
         $user->password = Hash::make('leonardo');

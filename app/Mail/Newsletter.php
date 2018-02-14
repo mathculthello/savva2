@@ -1,13 +1,13 @@
 <?php
 
-namespace Savva\Mail;
+namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-use Savva\Url;
+use App\Url;
 use Carbon\Carbon;
 
 class Newsletter extends Mailable

@@ -1,14 +1,14 @@
 <?php
 
-namespace Savva\Admin\Controllers;
+namespace App\Admin\Controllers;
 
-use Savva\User;
+use App\User;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
-use Savva\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
 class UserController extends Controller

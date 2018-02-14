@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Savva\Url::class, function (Faker $faker) {
+$factory->define(App\Url::class, function (Faker $faker) {
   $tag = ['google','course'];
     return [
       'url' => $faker->url,

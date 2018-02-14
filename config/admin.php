@@ -24,7 +24,7 @@ return [
 
         'prefix' => 'admin',
 
-        'namespace' => 'Savva\\Admin\\Controllers',
+        'namespace' => 'App\\Admin\\Controllers',
 
         'middleware' => ['web', 'admin'],
     ],

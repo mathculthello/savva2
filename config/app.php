@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Savva\Providers\AppServiceProvider::class,
-        Savva\Providers\AuthServiceProvider::class,
-        // Savva\Providers\BroadcastServiceProvider::class,
-        Savva\Providers\EventServiceProvider::class,
-        Savva\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

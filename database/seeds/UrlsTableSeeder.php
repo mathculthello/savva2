@@ -11,6 +11,6 @@ class UrlsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Savva\Url::class,50)->create();
+        factory(App\Url::class,50)->create();
     }
 }

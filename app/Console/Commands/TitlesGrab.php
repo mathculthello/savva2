@@ -1,10 +1,10 @@
 <?php
 
-namespace Savva\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-use Savva\Url;
+use App\Url;
 use Sunra\PhpSimple\HtmlDomParser as Parser;
 use Exception;
 use Curl\Curl;

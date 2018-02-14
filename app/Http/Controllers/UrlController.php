@@ -1,8 +1,8 @@
 <?php
 
-namespace Savva\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Savva\Url;
+use App\Url;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -84,7 +84,7 @@ class UrlController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Savva\Url  $url
+     * @param  \App\Url  $url
      * @return \Illuminate\Http\Response
      */
     public function show(Url $url)
@@ -95,7 +95,7 @@ class UrlController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Savva\Url  $url
+     * @param  \App\Url  $url
      * @return \Illuminate\Http\Response
      */
     public function edit(Url $url)
@@ -107,7 +107,7 @@ class UrlController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Savva\Url  $url
+     * @param  \App\Url  $url
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Url $url)
@@ -122,7 +122,7 @@ class UrlController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Savva\Url  $url
+     * @param  \App\Url  $url
      * @return \Illuminate\Http\Response
      */
     public function destroy(Url $url)

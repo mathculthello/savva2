@@ -8,7 +8,7 @@
 
 
 
-namespace Savva\Console;
+namespace App\Console;
 
 use Curl\Curl;
 

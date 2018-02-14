@@ -1,6 +1,6 @@
 <?php
 
-namespace Savva\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use Exception;
 
-use Savva\Url;
+use App\Url;
 
 class Controller extends BaseController
 {

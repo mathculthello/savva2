@@ -1,11 +1,11 @@
 <?php
 
-namespace Savva\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Encore\Admin\Console\InstallCommand as LaravelAdminInstallCommand;
 
-class SavvaInstall extends LaravelAdminInstallCommand
+class AppInstall extends LaravelAdminInstallCommand
 {
     /**
      * The name and signature of the console command.

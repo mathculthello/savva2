@@ -1,10 +1,10 @@
 <?php
 
-namespace Savva\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
-use Savva\Mail\Newsletter as NewsletterMail;
+use App\Mail\Newsletter as NewsletterMail;
 
 class Newsletter extends Command
 {

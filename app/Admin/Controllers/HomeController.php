@@ -1,8 +1,8 @@
 <?php
 
-namespace Savva\Admin\Controllers;
+namespace App\Admin\Controllers;
 
-use Savva\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\Dashboard;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Column;

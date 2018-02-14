@@ -13,7 +13,7 @@
 
 
 /* Mails */
-Route::get('/newsletter','\Savva\Mail\Newsletter@build');
+Route::get('/newsletter','\App\Mail\Newsletter@build');
 
 Route::resource('urls','UrlController');
 

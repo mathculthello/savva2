@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use Savva\Url;
+use App\Url;
 use Tests\TestCase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Testing\WithFaker;

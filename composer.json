@@ -30,7 +30,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "Savva\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

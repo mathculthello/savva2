@@ -8,12 +8,12 @@
 */
 
 
-namespace Savva\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-use Savva\Console\Google;
-use Savva\Url;
+use App\Console\Google;
+use App\Url;
 use Exception;
 
 class GooglePopulate extends Command

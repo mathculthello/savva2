@@ -1,5 +1,5 @@
 <?php
-namespace Savva;
+namespace App;
 
 use Curl\Curl;
 use Sunra\PhpSimple\HtmlDomParser as Parser;
