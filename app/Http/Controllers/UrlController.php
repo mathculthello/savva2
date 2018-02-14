@@ -36,6 +36,8 @@ class UrlController extends Controller
         "Плейлисты" => Url::where('url','LIKE','%playlist%')->orderBy('tag')->get(),
         "Курсера" => Url::where('url','LIKE','%coursera.%')->orderBy('tag')->get(),
         "Опен еду" => Url::where('url','LIKE','%openedu.%')->orderBy('tag')->get(),
+        "Лекторий" => Url::where('url','LIKE','%lektorium.%')->orderBy('tag')->get(),
+        "МФТИ" => Url::where('url','LIKE','%mipt.%')->orderBy('tag')->get(),
         "Отдельные видео на ютюбчике" => Url::where('url','LIKE','%youtu%watch%')->orderBy('tag')->get(),
         "Вкшечка" => Url::where('url','LIKE','%vk.com%')->orderBy('tag')->get(),
       ];
