@@ -37,6 +37,10 @@
       @yield('content')
     </div>
   </div>
+
+<hr>
+  Разработчик &mdash; <a href="mailto:yegor.kuzmichev@gmail.com">Егор Кузьмичев</a>
+
 </body>
 
 </html>
