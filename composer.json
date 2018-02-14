@@ -1,13 +1,14 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "Savva website",
+    "description": "Resource collection of Alexey Savvateev.",
+    "keywords": ["site", "edu", "math"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
         "curl/curl": "^1.8",
         "doctrine/dbal": "^2.6",
+        "encore/laravel-admin": "^1.5",
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",
         "kriswallsmith/buzz": "^0.16.0",
