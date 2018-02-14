@@ -11,8 +11,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->resource('demo/users', UserController::class);
-    $router->resource('demo/urls', UrlController::class);
+    $router->resource('savva/users', UserController::class);
+    $router->resource('urls', UrlController::class);
 
 
 });
