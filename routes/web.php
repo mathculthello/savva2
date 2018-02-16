@@ -25,8 +25,8 @@ Route::get('/full', 'UrlController@index')->name('full_list');
 
 /* Compatibility */
 
-Route::redirect('/full_list', '/');
-Route::redirect('/by_category', '/');
+//Route::redirect('/full_list', '/');
+//Route::redirect('/by_category', '/');
 
 
 
