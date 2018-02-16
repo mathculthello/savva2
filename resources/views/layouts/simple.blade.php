@@ -40,7 +40,7 @@
 
 <hr>
 
-  <img src="/img/kuz.png" width="50" height="30" style="float:left;">
+  <img src="{{ asset('img/kuz.png') }}" width="50" height="30" style="float:left;">
   <p>
   &nbsp;&nbsp;Разработчик &mdash; <a href="mailto:yegor.kuzmichev@gmail.com">Егор Кузьмичев</a>
   </p>
