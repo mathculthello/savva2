@@ -14,6 +14,6 @@
 
 <br/>
 
-Если есть идеи, reply-to-all.
+Есть идеи &mdash; reply-to-all.
 
 @endsection
