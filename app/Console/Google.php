@@ -126,7 +126,7 @@ class Google
  * @return $this
  */
 
-public static function get($n=2) {
+public static function get($n=1) {
   $obj = new self;
   $obj->get_n_pages($n);
   return $obj;
