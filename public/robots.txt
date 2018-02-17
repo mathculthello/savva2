@@ -1,1 +1,1 @@
-Host: http://savvateev.xyz
+Host: http://www.savvateev.xyz
