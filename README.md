@@ -11,6 +11,7 @@
 * PHP 7
 * [Composer](http://getcomposer.org)
 * Sqlite3
+* Make
 
 
 ## Для разработки:
