@@ -1,6 +1,6 @@
 erect: env
-	composer install
 	touch database/database.sqlite
+	composer install
 	php artisan migrate:fresh --seed
 
 env: 
