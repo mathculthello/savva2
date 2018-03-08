@@ -8,17 +8,16 @@
 
 ## Системные требования
 
-* PHP 7
+* PHP 7.1 (!) с модулями curl, mbstring
 * [Composer](http://getcomposer.org)
 * Sqlite3
-* Make
+* Make (необязательно)
 
 
 ## Для разработки:
 
 ```bash
-git clone https://github.com/aeifn/savva2
-cd savva2
+git clone https://github.com/aeifn/savva2 && cd savva2
 make erect
 php artisan serve
 ```
