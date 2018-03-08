@@ -11,7 +11,7 @@
 * PHP 7.1 (!) с модулями curl, mbstring
 * [Composer](http://getcomposer.org)
 * Sqlite3
-* Make (необязательно)
+* Make (необязательно --- см. Makefile)
 
 
 ## Для разработки:
