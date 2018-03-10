@@ -18,10 +18,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
       // фикс, чтобы при развертывании не вылетала ошибка
-      if(!\App::runningInConsole()){
-        View::share('count',Url::count());
-      }
-
+      // Using class based composers...
+      View::composer(
+          '*', function ($view) {
+            $view->with('count',Url::count());
+        });
     }
 
     /**
