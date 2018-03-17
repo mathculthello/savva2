@@ -6,6 +6,8 @@ use App\Url;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 
 class UrlController extends Controller
 {
@@ -28,6 +30,12 @@ class UrlController extends Controller
         $urls_array[$tag]=Url::where('tag',$tag)->get();
       }
       return view('urls.index.by_tag',['urls_array'=>$urls_array]);
+    }
+
+    public function recent(){
+      $items=Url::where('created_at','>',Carbon::now()->subWeek())->orderBy('created_at','desc')->get();
+      //return view('urls.txt.recent',['items'=>$items]);
+      return response()->view('urls.txt.recent',['items'=>$items])->header('Content-Type','text');
     }
 
     public function by_service()

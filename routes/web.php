@@ -14,6 +14,7 @@
 
 /* Mails */
 Route::get('/newsletter','\App\Mail\Newsletter@build');
+Route::get('/recent','UrlController@recent');
 
 Route::resource('urls','UrlController');
 
