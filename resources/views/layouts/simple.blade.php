@@ -48,7 +48,7 @@
 <hr>
 
   <p>
-  Разработчик &mdash; <a href="mailto:yegor.kuzmichev@gmail.com">Егор Кузьмичев</a>
+  Разработчик &mdash; <a href="mailto:egor@kuzmichev.design">Егор Кузьмичев</a>
   </p>
 </body>
 
