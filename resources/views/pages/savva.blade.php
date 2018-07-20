@@ -1,56 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
- <head>
-  <meta
-  content="text/html; charset=Windows-1251"
-  http-equiv="content-type">
-  <title>Университет Дмитрия Пожарского | МАГИСТРАТУРА </title>
+@extends('layouts.simple')
 
-  <!-- Latest compiled and minified CSS -->
-<!--
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+@section('content')
 
-
-
-<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic&subset=cyrillic' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="style.css" type="text/css">
--->
-
-  </head>
-  <body>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter37041075 = new Ya.Metrika({
-                    id:37041075,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/37041075" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
- <div class="container-fluid extra header"><div class="container text-center"><h5>Наш телефон 8-800-505-36-48 (бесплатно по России)</h5></div></div>
-
- <div class="container text-center"><a href="index.html"><img src="img/logo.jpg" class="logo"></a>
+<div class="container text-center"><a href="index.html"><img src="/img/logo.jpg" class="logo"></a>
 
 <h1>Университет Дмитрия Пожарского</h1>
 </div>
@@ -208,9 +160,4 @@
 
 </div>
 
-
-
-<p><br></p>
-
- </body>
-</html>
+@endsection

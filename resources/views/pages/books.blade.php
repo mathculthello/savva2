@@ -1,9 +1,6 @@
-<html>
-	<head>
-		<title>Books</title>
-	</head>
-	<body>
+@extends('layouts.simple')
 
+@section('content')
 <pre>
 Курант, Роббинс "Что такое математика" (для гуманитариев!)
 Берже "Геометрия", тома 1 и 2
@@ -34,7 +31,5 @@
 <a href="//math.hse.ru/books/">Матфак рекомендует</a>
 </pre>
 
-	</body>
-</html>
 
-
+@endsection

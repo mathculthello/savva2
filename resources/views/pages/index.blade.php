@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
- <head>
-  <meta
-  content="text/html; charset=utf-8"
-  http-equiv="content-type">
-  <title>Алексей Владимирович Савватеев</title>
+@extends('layouts.simple')
 
-  </head>
-  <body>
+@section('content')
+
  <div class="container">
-	<h1>Алексей Владимирович Савватеев</h1>
 
  <!-- SAVVATEEV -->
 
-	<img src="img/savvateev.jpg">
+	<img src="/img/savvateev.jpg">
 
 
 
@@ -82,7 +75,4 @@
 </p>
 <hr>
 
-<p>Вебмастер &mdash; <a href="mailto:yegor.kuzmichev@gmail.com">Егор Кузьмичев</a>
-
- </body>
-</html>
+@endsection
