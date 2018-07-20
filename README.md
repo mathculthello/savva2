@@ -2,7 +2,7 @@
 
 База данных ссылок на выступления и ресурсы [Алексея Савватеева](https://ru.wikipedia.org/wiki/Савватеев,_Алексей_Владимирович).
 
-Вертится здесь: http://base.savvateev.xyz/
+Вертится здесь: http://savvateev.xyz/
 
 Это версия на базе [Laravel](https://laravel.com).
 
