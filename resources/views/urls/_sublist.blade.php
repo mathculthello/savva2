@@ -1,6 +1,12 @@
+<form method="POST" action="{{ route('urls.batch') }}">
+  @csrf
+  <input type="submit" value="Удалить отмеченные!">
 <table class="table">
   @foreach ($urls as $url)
   <tr>
+    <td>
+      <input name="box[]" value="{{ $url->id }}" type="checkbox">
+    </td>
     <td>
       {{$url->id}}
     </td>
@@ -8,7 +14,7 @@
       {{$url->title}}
     </td>
     <td>
-      <a href="{{$url->url}}">{{ substr($url->url,0,50) }}</a>
+      <a target="_blank" href="{{$url->url}}">{{ substr($url->url,0,50) }}</a>
     </td>
     <td>
       {{$url->created_at}}
@@ -20,14 +26,8 @@
     <td>
       <a href="{{ route('urls.edit',$url->id) }}">Ред</a>
     </td>
-    <td>
-      <form method="POST" action="{{ route('urls.destroy',$url->id) }}">
-        @csrf
-        @method('DELETE')
-        <input type="submit" value="Удалить">
-      </form>
-    </td>
     @endauth
   </tr>
   @endforeach
 </table>
+</form>

@@ -16,6 +16,7 @@
 Route::get('/newsletter','\App\Mail\Newsletter@build');
 Route::get('/recent','UrlController@recent');
 
+Route::post('/batch','UrlController@batch')->name('urls.batch');
 Route::resource('urls','UrlController');
 
 Route::get('/book',function(){

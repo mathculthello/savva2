@@ -138,4 +138,12 @@ class UrlController extends Controller
       $url->delete();
       return back();
     }
+
+    public function batch(Request $request)
+    {
+      $ids = $request->input('box.*');
+      Url::destroy($ids);
+      return back();
+
+    }
 }
