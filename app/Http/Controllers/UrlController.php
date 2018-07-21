@@ -15,7 +15,7 @@ class UrlController extends Controller
     function __construct()
     {
       // Добавляем авторизацию на методы изменения контента
-      $this->middleware('auth.basic',['only'=>['add','delete']]);
+      $this->middleware('auth.basic',['only'=>['add','destroy','batch']]);
     }
 
     /**
