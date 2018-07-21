@@ -61,8 +61,12 @@
 
         <main class="py-4">
             @yield('content')
+            Разработчик <a href="mailto:yegor.kuzmichev@gmail.com">Егор Кузьмичев</a>
+
         </main>
+
     </div>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

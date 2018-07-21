@@ -1,10 +1,11 @@
-@extends('layouts.simple')
+@extends('layouts.app')
 
 @section('content')
 
  <div class="container">
 
  <!-- SAVVATEEV -->
+ <h1>Алексей Владимирович Савватеев</h1>
 
 	<img src="/img/savvateev.jpg">
 
