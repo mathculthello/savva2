@@ -1,12 +1,16 @@
 <form method="POST" action="{{ route('urls.batch') }}">
   @csrf
+  @auth
   <input type="submit" value="Удалить отмеченные!">
+  @endauth
 <table class="table">
   @foreach ($urls as $url)
   <tr>
+    @auth
     <td>
       <input name="box[]" value="{{ $url->id }}" type="checkbox">
     </td>
+    @endauth
     <td>
       {{$url->id}}
     </td>
