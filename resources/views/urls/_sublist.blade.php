@@ -1,8 +1,4 @@
-<form method="POST" action="{{ route('urls.batch') }}">
-  @csrf
-  @auth
-  <input type="submit" value="Удалить отмеченные!">
-  @endauth
+
 <table class="table">
   @foreach ($urls as $url)
   <tr>
@@ -34,4 +30,3 @@
   </tr>
   @endforeach
 </table>
-</form>
